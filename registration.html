@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Farmer Registration Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        nav.top-nav {
+            background-color: #006400;
+            border-top: 2px solid #004B23;
+            border-bottom: 3px solid #38B000;
+        }
+        .nav-menu {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-menu li {
+            display: inline-block;
+        }
+        .nav-menu li a {
+            display: block;
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .nav-menu li a:hover {
+            color: #004B23;
+            background-color: #70E000;
+        }
+        .nav-menu li a.active {
+            background-color: #38B000;
+            color: #FFFFFF;
+        }
+        /* --- SIDEBAR & CONTENT LAYOUT --- */
+        .page-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+        .sidebar {
+            width: 30%;
+            background-color: #2D5A27;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-sizing: border-box;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            align-self: flex-start;
+        }
+        .sidebar h3 {
+            border-bottom: 2px solid #70E000;
+            padding-bottom: 8px;
+            margin-top: 0;
+            color: #ffffff;
+        }
+        .sidebar p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .main-content {
+            width: 70%;
+            box-sizing: border-box;
+        }
+        fieldset {
+            border: 2px solid #2D5A27;
+            border-radius: 8px;
+            padding: 20px 25px;
+            background-color: #f9fbf9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        legend {
+            font-weight: bold;
+            color: #FFFFFF;
+            background-color: #2D5A27;
+            padding: 6px 15px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #1E3F1B;
+        }
+        .inline-label {
+            display: inline;
+            font-weight: normal;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="number"],
+        input[type="date"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="tel"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        input[type="date"]:focus,
+        input[type="file"]:focus,
+        select:focus {
+            border-color: #38B000;
+            box-shadow: 0 0 6px rgba(56, 176, 0, 0.4);
+            outline: none;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        input[type="submit"] {
+            background-color: #2D5A27;
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-right: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #70E000;
+            color: #004B23;
+            transform: translateY(-2px);
+        }
+        input[type="reset"] {
+            background-color: #8b0000;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="reset"]:hover {
+            background-color: #a80000;
+        }
+
+        .invalid-field {
+            border: 2px solid #dc3545 !important;
+            background-color: #fff8f8 !important;
+        }
+
+        .error-msg {
+            color: #dc3545;
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: #306D29; text-align: center; padding: 5px; border:#306D29 solid 10px;">
+        <h1 style="color: lightgray; padding: 15px; margin: 0;">AI-BASED SMART IRRIGATION ADVISORY SYSTEM</h1>
+    </header>
+
+    <nav class="top-nav">
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about-system.html">About System</a></li>
+            <li><a href="irrigation-advisory.html">Advisory</a></li>
+            <li><a href="farm-information.html">Farm &amp; Sensors</a></li>
+            <li><a href="recommendation.html">Recommendations</a></li>
+            <li><a href="farmer-registration.html" class="active">Registration</a></li>
+            <li><a href="navigation.html">Directory</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-container">
+        <aside class="sidebar">
+            <h3>Registration Help</h3>
+            <p>Fill in your plot and crop details to receive customized daily SMS alerts for irrigation schedules and weather conditions.</p>
+            <hr style="border-color: rgba(255,255,255,0.2);">
+            <p><b>Required Documents:</b><br>Valid Mobile Number, Plot Identification Code, & Farm Photo.</p>
+        </aside>
+
+        <main class="main-content">
+            <form id="registrationForm" action="#" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Farmer Registration Form</legend>
+
+                    <div class="form-group">
+                        <label for="name">Farmer Name:</label>
+                        <input type="text" id="name" name="farmer-name" placeholder="Enter full name">
+                        <span id="nameError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number (+91):</label>
+                        <input type="text" id="mobile" name="mobile" placeholder="10-digit mobile number">
+                        <span id="mobileError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="text" id="email" name="email" placeholder="example@domain.com">
+                        <span id="emailError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="village">Village:</label>
+                        <input type="text" id="village" name="village" placeholder="Enter village name">
+                        <span id="villageError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="plot">Plot ID:</label>
+                        <input type="number" id="plot" name="plot_id" placeholder="e.g., 101">
+                        <span id="plotError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="crop">Crop Variety:</label>
+                        <input type="text" id="crop" name="crop_variety" placeholder="e.g., Sugarcane Co 86032">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="crop_stage">Crop Stage:</label>
+                        <select id="crop_stage" name="crop_stage">
+                            <option value="">Select Stage</option>
+                            <option value="germination">Germination</option>
+                            <option value="vegetative">Vegetative</option>
+                            <option value="flowering">Flowering</option>
+                            <option value="harvesting">Harvesting</option>
+                        </select>
+                        <span id="cropStageError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="soil_type">Soil Type:</label>
+                        <select id="soil_type" name="soil_type">
+                            <option value="">Select Soil Type</option>
+                            <option value="clay">Clay</option>
+                            <option value="sandy">Sandy</option>
+                            <option value="loamy">Loamy</option>
+                            <option value="black">Black Soil</option>
+                        </select>
+                        <span id="soilTypeError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="soil_moisture">Soil Moisture (%):</label>
+                        <input type="number" id="soil_moisture" name="soil_moisture" min="0" max="100" step="0.1" placeholder="e.g., 35.5">
+                        <span id="moistureError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Farm Area (Acres):</label>
+                        <input type="number" id="area" name="farm_area" step="0.01" placeholder="e.g., 2.5">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="irrigation">Irrigation Method:</label>
+                        <select id="irrigation" name="irrigation_method">
+                            <option value="">Select Method</option>
+                            <option value="surface">Surface Irrigation</option>
+                            <option value="drip">Drip Irrigation</option>
+                            <option value="sprinkler">Sprinkler Irrigation</option>
+                            <option value="center_pivot">Center Pivot Irrigation</option>
+                            <option value="subsurface">Subsurface Irrigation</option>
+                        </select>
+                        <span id="irrigationError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="farm_photo">Farm Photo Upload:</label>
+                        <input type="file" id="farm_photo" name="farm_photo" accept="image/jpeg, image/png, image/jpg">
+                        <span id="photoError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg_date">Registration Date:</label>
+                        <input type="date" id="reg_date" name="reg_date">
+                        <span id="dateError" class="error-msg"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Language:</label>
+                        <input type="radio" id="english" name="language" value="English">
+                        <label for="english" class="inline-label">English</label>
+                        <input type="radio" id="hindi" name="language" value="Hindi">
+                        <label for="hindi" class="inline-label">Hindi</label>
+                        <input type="radio" id="other" name="language" value="Other">
+                        <label for="other" class="inline-label">Other</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Advisory Services Required:</label>
+                        <input type="checkbox" id="weather" name="services" value="Weather Updates">
+                        <label for="weather" class="inline-label">Weather Updates</label><br>
+                        <input type="checkbox" id="fertilizer" name="services" value="Fertilizer Recommendation">
+                        <label for="fertilizer" class="inline-label">Fertilizer Recommendation</label><br>
+                        <input type="checkbox" id="pest" name="services" value="Pest Control">
+                        <label for="pest" class="inline-label">Pest Control</label><br>
+                        <input type="checkbox" id="market" name="services" value="Market Prices">
+                        <label for="market" class="inline-label">Market Prices</label>
+                    </div>
+
+                    <div class="button-group">
+                        <input type="submit" value="Submit Registration">
+                        <input type="reset" value="Reset Form">
+                    </div>
+                </fieldset>
+            </form>
+        </main>
+    </div>
+
+    <blockquote style="color: white; text-align: center; background-color: #306D29; padding: 20px; margin: 30px 0 0 0;">
+        Smart irrigation helps farmers use water efficiently, improve crop quality, and support sustainable agriculture.
+        <br><br>
+        <b>— Agricultural Expert</b>
+    </blockquote>
+
+    <footer style="background-color: lightgray; text-align: center; padding: 15px;">
+        <p style="margin: 0; color: #306D29;"><b>&copy; 2026 AI-Based Smart Irrigation Advisory System. All rights reserved.</b></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
